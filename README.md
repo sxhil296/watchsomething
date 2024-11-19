@@ -1,5 +1,5 @@
 # Watch Something
 
 ## TODOS: 
+- [ ] deploy on vercel
 - [ ] scaffold basic UI
-- [ ] iframe for video playing
