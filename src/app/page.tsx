@@ -1,35 +1,47 @@
 "use client";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+
+import { Play } from "lucide-react";
 import { Video } from "@/components/video";
 
 export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [videoIndex, setVideoIndex] = useState(0);
-
-  // Array of video URLs
-  const videoUrls = [
-    "https://youtu.be/Zq5fmkH0T78?si=HVlCYY0o0jHYxL2f",
-    "https://youtu.be/c1A4rSvQR44?si=ybA0k3NEgMo6SJ6A",
-  ];
 
   const handlePlay = () => {
     setIsPlaying(true);
-    setVideoIndex((prevIndex) => (prevIndex + 1) % videoUrls.length);
   };
 
   return (
     <main
-      className={`min-h-screen flex justify-center items-center flex-col w-full ${isPlaying? "bg-[url('../../public/bg.gif')]" : "bg-white"}`}
+      className={`min-h-screen flex justify-center items-center flex-col w-full bg-[url('../../public/bg.gif')] `}
     >
-      {!isPlaying ? (
-        <p className="text-white">Click the button to get started</p>
+      <div
+        className="w-full h-full"
+        style={{
+          background:
+            "radial-gradient(ellipse at center,transparent 0,rgba(0,0,0,.75) 100%)",
+        }}
+      ></div>
+      {isPlaying ? (
+        <Video />
       ) : (
-        <Video videoSrc={videoUrls[videoIndex]} />
+        <div className="text-center font-extrabold text-5xl mb-4 leading-snug text-white">
+          <h2>Skip the Scroll,</h2>
+          <h2>
+            <span className="text-[#f8e66e]">Wonderful Videos</span> on a Tap.
+          </h2>
+        </div>
       )}
-      <Button className="max-w-[100px]" onClick={handlePlay}>
-        {isPlaying ? "Next Video" : "Play"}
-      </Button>
+
+      <button
+        onClick={handlePlay}
+        className="px-5 py-3 bg-[#f8e66e] text-black text-lg font-medium gap-2 flex justify-center items-center rounded-3xl"
+      >
+        Start Playing
+        <span>
+          <Play />
+        </span>
+      </button>
     </main>
   );
 }

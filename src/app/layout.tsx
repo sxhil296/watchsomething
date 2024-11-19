@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased placeholder:overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased placeholder:overflow-hidden `}
       >
         <Header />
         {children}
@@ -35,3 +35,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+//bg-[url('../../public/bg.gif')]

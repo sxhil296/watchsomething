@@ -1,16 +1,23 @@
-export function Video({ videoSrc }: { videoSrc: string }) {
+const links = [
+  "https://www.youtube.com/embed/83jZQlHiT1Y?si=0tfm_ceDHpGTqvli",
+  "https://www.youtube.com/embed/83jZQlHiT1Y?si=0tfm_ceDHpGTqvli",
+];
+
+export function Video() {
   return (
-    // <video width="320" height="240" controls preload="none">
-    //   <source src={videoSrc} type="video/mp4" />
-    //   Your browser does not support the video tag.
-    // </video>
-    <div className="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%[">
+    <div className="flex justify-center  items-center  relative shadow-lg rounded-md mb-6">
       <iframe
-        src={videoSrc}
-        className="top-0 left-0  w-full  h-full absolute"
-        // allowfullscreen
-        scrolling="no"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+        frameBorder="0"
+        allowFullscreen=""
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        title="You're Not Relatable Anymore"
+        width="640"
+        height="360"
+        src="https://www.youtube.com/embed/3UBBulOCI7I?autoplay=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.watchsomethingwonderful.com&amp;widgetid=1"
+        id="widget2"
+        data-gtm-yt-inspected-6="true"
+        className="rounded-xl shadow-md"
       ></iframe>
     </div>
   );
