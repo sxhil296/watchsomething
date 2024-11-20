@@ -1,19 +1,21 @@
-import React from "react";
-import { Share2, Tv } from "lucide-react";
+"use client";
+
+import { Share2 } from "lucide-react";
+import Image from "next/image";
 
 const Header = () => {
   return (
-    <header className="fixed px-4 py-2 w-full top-0 ">
+    <header className="fixed px-6 py-2 w-full top-6">
       <div className="flex justify-between items-center">
-        <div className="flex gap-2 justify-center items-center">
-          <Tv className="text-white" size={48}/>
-          <div className="text-2xl font-bold text-white flex flex-col leading-6 justify-center">
-            <p className="">Watch Something</p>
+        <div className="flex gap-[10px] justify-center items-center">
+          <Image className="text-white" src="/tv.svg" width={48} height={48} alt="tv logo" />
+          <div className="text-2xl font-bold text-white flex flex-col justify-center leading-8">
+            <p>Watch Something</p>
             <p>Wonderful</p>
           </div>
         </div>
-        <button className="px-4 py-2 text-[#f8e66e] border-2 border-[#f8e66e] font-bold rounded-3xl flex justify-center items-center gap-2">
-          <span> Share</span>
+        <button className="px-4 py-2 text-[#f8e66e] border-2 border-[#f8e66e] hover:bg-[#f8e66e] hover:text-black duration-200 font-medium rounded-3xl flex justify-center items-center gap-2">
+          <span>Share</span>
           <Share2 />
         </button>
       </div>

@@ -14,7 +14,7 @@ const links = [
 
 // Array of random button texts
 const buttonTexts = [
-  "Start Playing",
+  "Show me the magic",
   "Take me to the next",
   "Skip this",
   "Play something else",
@@ -63,7 +63,7 @@ export default function Home() {
         {isPlaying ? (
           <Video videoUrl={currentVideoUrl} />
         ) : (
-          <div className="text-center font-extrabold text-5xl mb-4 leading-snug text-white">
+          <div className="text-center font-extrabold text-5xl mb-4 leading-snug text-white tracking-wide">
             <h2>Skip the Scroll,</h2>
             <h2>
               <span className="text-[#f8e66e]">Wonderful Videos</span> on a Tap.
@@ -73,7 +73,7 @@ export default function Home() {
 
         <button
           onClick={isPlaying ? handleSkip : handlePlay}
-          className="px-5 py-3 bg-[#f8e66e] text-black text-lg font-medium gap-2 flex justify-center items-center rounded-3xl"
+          className="px-5 py-3 bg-[#f8e66e] text-black text-lg font-normal gap-2 flex justify-center items-center rounded-3xl"
         >
           {buttonText}
           <span>{isPlaying ? <WandSparkles /> : <Play />}</span>
