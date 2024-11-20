@@ -1,20 +1,15 @@
-const links = [
-  "https://www.youtube.com/embed/83jZQlHiT1Y?si=0tfm_ceDHpGTqvli",
-  "https://www.youtube.com/embed/83jZQlHiT1Y?si=0tfm_ceDHpGTqvli",
-];
-
-export function Video() {
+export function Video({ videoUrl }: { videoUrl: string }) {
   return (
-    <div className="flex justify-center  items-center  relative shadow-lg rounded-md mb-6">
+    <div className="flex justify-center items-center relative shadow-lg rounded-md mb-6">
       <iframe
         frameBorder="0"
-        allowFullscreen=""
+        allowFullScreen
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        title="You're Not Relatable Anymore"
-        width="640"
+        referrerPolicy="strict-origin-when-cross-origin"
+        title="Video Player"
+        width="740"
         height="360"
-        src="https://www.youtube.com/embed/3UBBulOCI7I?autoplay=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.watchsomethingwonderful.com&amp;widgetid=1"
+        src={videoUrl}
         id="widget2"
         data-gtm-yt-inspected-6="true"
         className="rounded-xl shadow-md"
