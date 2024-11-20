@@ -8,6 +8,8 @@ const links = [
   "https://www.youtube.com/embed/7hr60EumwQ4?si=0m8QIRBWxadnJ3dc",
   "https://www.youtube.com/embed/1MgQFcBRLLo?si=FBOphk24qSaR_cZ3",
   "https://www.youtube.com/embed/RacxNskxySo?si=7WtZ2-SJY-XtmeZL",
+  // "https://www.youtube.com/embed/3kQRKhvxh34?si=gEPPpruLUxblkSIW",
+  "https://www.youtube.com/embed/yzgS61zgPEg?si=t1B1obuhhq226lLA",
 ];
 
 // Array of random button texts
@@ -20,7 +22,7 @@ const buttonTexts = [
 
 export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentVideoUrl, setCurrentVideoUrl] = useState<string | null>(null);
+  const [currentVideoUrl, setCurrentVideoUrl] = useState<string>("");
   const [buttonText, setButtonText] = useState<string>("Start Playing");
 
   // Function to pick a random video and button text
