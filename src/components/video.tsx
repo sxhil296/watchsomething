@@ -1,5 +1,5 @@
 export function Video({ videoUrl }: { videoUrl: string }) {
-  const autoplayUrl = `${videoUrl}&autoplay=1`; 
+  const autoplayUrl = `${videoUrl}&autoplay=1`;
 
   return (
     <div className="flex justify-center items-center relative shadow-lg rounded-md mb-6">
@@ -11,7 +11,7 @@ export function Video({ videoUrl }: { videoUrl: string }) {
         title="Video Player"
         width="780"
         height="440"
-        src={autoplayUrl} 
+        src={autoplayUrl}
         id="widget2"
         data-gtm-yt-inspected-6="true"
         className="rounded-xl shadow-md"

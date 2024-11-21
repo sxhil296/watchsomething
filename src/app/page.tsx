@@ -3,12 +3,12 @@ import { useState } from "react";
 import { Play, WandSparkles } from "lucide-react";
 import { Video } from "@/components/video";
 
+
 // Array of YouTube video links
 const links = [
   "https://www.youtube.com/embed/7hr60EumwQ4?si=0m8QIRBWxadnJ3dc",
   "https://www.youtube.com/embed/1MgQFcBRLLo?si=FBOphk24qSaR_cZ3",
   "https://www.youtube.com/embed/RacxNskxySo?si=7WtZ2-SJY-XtmeZL",
-  // "https://www.youtube.com/embed/3kQRKhvxh34?si=gEPPpruLUxblkSIW",
   "https://www.youtube.com/embed/yzgS61zgPEg?si=t1B1obuhhq226lLA",
 ];
 
@@ -24,26 +24,24 @@ export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentVideoUrl, setCurrentVideoUrl] = useState<string>("");
   const [buttonText, setButtonText] = useState<string>("Start Playing");
+  const [currentVideoIndex, setCurrentVideoIndex] = useState<number>(0);
 
-  // Function to pick a random video and button text
   const handlePlay = () => {
-    const randomVideo = links[Math.floor(Math.random() * links.length)];
-    const randomButtonText =
-      buttonTexts[Math.floor(Math.random() * buttonTexts.length)];
-
     setIsPlaying(true);
-    setCurrentVideoUrl(randomVideo);
-    setButtonText(randomButtonText);
+    setCurrentVideoUrl(links[currentVideoIndex]);
+    setButtonText(buttonTexts[Math.floor(Math.random() * buttonTexts.length)]);
   };
 
   const handleSkip = () => {
-    const randomVideo = links[Math.floor(Math.random() * links.length)];
-    const randomButtonText =
-      buttonTexts[Math.floor(Math.random() * buttonTexts.length)];
-
-    setCurrentVideoUrl(randomVideo);
-    setButtonText(randomButtonText);
+    const nextIndex = (currentVideoIndex + 1) % links.length;
+    setCurrentVideoIndex(nextIndex);
+    setCurrentVideoUrl(links[nextIndex]);
+    setButtonText(buttonTexts[Math.floor(Math.random() * buttonTexts.length)]);
   };
+
+
+
+
 
   return (
     <main
@@ -76,7 +74,7 @@ export default function Home() {
           className="px-5 py-3 bg-[#f8e66e] text-black text-lg font-normal gap-2 flex justify-center items-center rounded-3xl"
         >
           {buttonText}
-          <span>{isPlaying ? <WandSparkles /> : <Play />}</span>
+          <span>{isPlaying ? <WandSparkles  /> : <Play />}</span>
         </button>
       </div>
     </main>

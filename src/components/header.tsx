@@ -5,11 +5,11 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <header className="fixed px-6 py-2 w-full top-6">
+    <header className="fixed px-4 md:px-6 py-2 w-full top-6">
       <div className="flex justify-between items-center">
         <div className="flex gap-[10px] justify-center items-center">
           <Image className="text-white" src="/tv.svg" width={48} height={48} alt="tv logo" />
-          <div className="text-2xl font-bold text-white flex flex-col justify-center leading-8">
+          <div className="text-xl md:text-2xl font-bold text-white flex flex-col justify-center leading:4 md:leading-8">
             <p>Watch Something</p>
             <p>Wonderful</p>
           </div>

@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/header";
 
 import { Anton } from "next/font/google";
+import Footer from "@/components/footer";
 
 const anton = Anton({
   weight: "400",
@@ -27,9 +28,10 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
 }
 
-//bg-[url('../../public/bg.gif')]
+
