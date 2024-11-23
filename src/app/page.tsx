@@ -4,6 +4,7 @@ import { Play, WandSparkles } from "lucide-react";
 import { Video } from "@/components/video";
 
 
+
 // Array of YouTube video links
 const links = [
   "https://www.youtube.com/embed/7hr60EumwQ4?si=0m8QIRBWxadnJ3dc",
@@ -45,17 +46,18 @@ export default function Home() {
 
   return (
     <main
-      style={{
-        background:
-          "radial-gradient(circle, rgba(88,88,89,1) 0%, rgba(10,1,1,0.78) 100%)",
-      }}
+    style={{
+      backgroundImage: "url('/bg.gif')",
+      backgroundPosition: "center",
+    }}
+     
       className="min-h-screen w-full"
     >
       <div
         className="min-h-screen flex justify-center items-center flex-col w-full"
         style={{
-          backgroundImage: "url('/bg.gif')",
-          backgroundPosition: "center",
+          background:
+            "radial-gradient(circle, rgba(88,88,89,1) 0%, rgba(10,1,1,0.78) 100%)",
         }}
       >
         {isPlaying ? (
@@ -77,6 +79,7 @@ export default function Home() {
           <span>{isPlaying ? <WandSparkles  /> : <Play />}</span>
         </button>
       </div>
+ 
     </main>
   );
 }
